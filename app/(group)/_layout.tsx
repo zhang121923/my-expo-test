@@ -17,19 +17,35 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: "Home",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+          )
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
+          href: null,
+          title: "Explore",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name='[user]'
+        options={{
+          title: 'Author',
+          tabBarIcon: ({color, focused}) => (
+            <TabBarIcon name={focused ? 'person' : 'person-outline'} color={color}/>
+          ),
+          href: {
+            pathname: "/[user]",
+            params: {
+              user: "leo.zhang@google.com"
+            }
+          }
         }}
       />
     </Tabs>
